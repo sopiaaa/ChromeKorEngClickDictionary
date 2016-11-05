@@ -1,0 +1,26 @@
+{
+	// Required
+	"manifest_version": 2,
+	"name": "CLICK DICTIONARY",
+	"version": "1.0",
+	//Recommended
+  	"description": "This program is for dictionary who want to translate English or Korean.",
+	"icons": { "16": "16x16.png",
+           "48": "48x48.png",
+          "128": "128x128.png" },
+    "background": {
+		"scripts": ["jquery-2.1.4.min.js", "background.js"]
+	},
+    "browser_action": {
+		"default_popup": "popup.html",
+		"default_title": "KOR-ENG Dictionary"
+	},
+	"content_scripts": [
+		{
+			"matches": ["http://*/*", "https://*/*"],
+			"js" : ["jquery-2.1.4.min.js"],
+			"run_at": "document_end"
+		}
+	]
+
+}
